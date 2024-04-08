@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+</head>
+<body>
+    <script>
+        // Function to validate passwords
+        function validatePasswords() {
+            // Retrieve password values from input fields
+            var pass1 = document.getElementById("pass1").value;
+            var pass2 = document.getElementById("pass2").value;
+
+            // Check if passwords are at least eight characters long and match
+            if (pass1.length < 8) {
+                alert("The length of the first password is less than 8 characters!");
+            } else if (pass2.length < 8) {
+                alert("The length of the second password is less than 8 characters!");
+            } else if (pass1 !== pass2) {
+                alert("Passwords don't match!");
+            } else {
+                alert("Passwords matched successfully!");
+            }
+        }
+    </script>
+
+    <h1>Password Verification</h1>
+    <!-- Input fields for entering passwords -->
+    <label for="pass1">Enter Password:</label><br>
+    <input type="password" id="pass1"><br>
+    <label for="pass2">Re-enter Password:</label><br>
+    <input type="password" id="pass2"><br><br>
+    <!-- Button to verify passwords -->
+    <button onclick="validatePasswords()">Verify Passwords</button>
+</body>
+</html>

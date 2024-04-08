@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table Generator</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Multiplication Table Generator</h2>
+
+<form id="multiplicationForm">
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" name="number" min="1" required>
+    <button type="submit">Generate Table</button>
+</form>
+
+<div id="tableContainer"></div>
+
+<script>
+document.getElementById('multiplicationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var number = parseInt(document.getElementById('number').value);
+    generateTable(number);
+});
+
+function generateTable(number) {
+    var table = '<table>';
+    table += '<tr><th colspan="' + (number + 1) + '">Multiplication Table for ' + number + '</th></tr>';
+    for (var i = 1; i <= number; i++) {
+        table += '<tr>';
+        for (var j = 1; j <= number; j++) {
+            table += '<td>' + (i * j) + '</td>';
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.getElementById('tableContainer').innerHTML = table;
+}
+</script>
+
+</body>
+</html>

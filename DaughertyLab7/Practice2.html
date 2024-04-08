@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Title of the webpage -->
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+</head>
+
+<!-- CSS style for paragraph border -->
+<style>
+    #paragraph {
+        border-style: solid;
+        border-width: 5px;
+    }
+</style>
+
+<body>
+    <!-- Container for the paragraph to be altered -->
+    <div id="paragraph">
+        <!-- Placeholder text for the paragraph -->
+        “Computers are incredibly fast, accurate, and stupid. Human beings are incredibly slow, inaccurate, and brilliant. Together they are powerful beyond imagination.” - Albert Einstein
+    </div>
+
+    <!-- Input fields for specifying border and background color -->
+    <!-- Red color input for border -->
+    Border R(0-255): <input type="text" id="br" value=""> <br>
+    <!-- Green color input for border -->
+    Border G(0-255): <input type="text" id="bg" value=""> <br>
+    <!-- Blue color input for border -->
+    Border B(0-255): <input type="text" id="bb" value=""> <br>
+    <!-- Input for border width -->
+    Border Width: <input type="text" id="bw" value=""> <br>
+    <!-- Red color input for background -->
+    Background R(0-255): <input type="text" id="bgr" value=""> <br>
+    <!-- Green color input for background -->
+    Background G(0-255): <input type="text" id="bgg" value=""> <br>
+    <!-- Blue color input for background -->
+    Background B(0-255): <input type="text" id="bgb" value=""> <br>
+    <!-- Button to trigger the color change function -->
+    <button onclick="alert_paragraph_color()">Change color!</button> <br>
+
+    <!-- JavaScript function to change paragraph color -->
+    <script>
+        function alert_paragraph_color() {
+            // Retrieving values from input fields
+            var br = document.getElementById("br").value;
+            var bg = document.getElementById("bg").value;
+            var bb = document.getElementById("bb").value;
+            var bw = document.getElementById("bw").value;
+            var bgr = document.getElementById("bgr").value;
+            var bgg = document.getElementById("bgg").value;
+            var bgb = document.getElementById("bgb").value;
+
+            // Accessing the paragraph element
+            var tag = document.getElementById("paragraph");
+            // Setting border color
+            tag.style.borderColor = `rgb(${br},${bg},${bb})`;
+            // Setting border width
+            tag.style.borderWidth = bw;
+            // Setting background color
+            tag.style.backgroundColor = `rgb(${bgr},${bgg},${bgb})`;
+        }
+    </script>
+</body>
+
+
+</html>
